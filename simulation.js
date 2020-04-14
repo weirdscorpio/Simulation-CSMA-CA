@@ -27,7 +27,9 @@ function display(a,b){
 
 function checkChannel(){
   if(channel == 0 )
-  {
+  { var n = document.querySelectorAll(".d-none");
+    n[x-1].classList.remove('d-none');
+    n[x-1].classList.add('d-block');
     setTimeout(sendSignal,ifs);
   }
   else
@@ -37,6 +39,9 @@ function checkChannel(){
 }
 
 function sendSignal(){
+  var n = document.querySelectorAll(".ifs");
+  n[x-1].classList.remove('d-block');
+  n[x-1].classList.add('d-none');
   r = tp*parseInt(Math.random()*k[x-1]);
   sendRTS();
 }
@@ -84,7 +89,7 @@ function checkIFS(){
 function swap(){
   if(swp==0)
   {
-    var none = document.querySelectorAll(".d-none");
+    var none = document.querySelectorAll(".for-swap");
     none[0].classList.remove('d-none');
     none[0].classList.add('d-block','d-flex');
     none[1].classList.remove('d-none');
@@ -92,7 +97,7 @@ function swap(){
     swp=1;
   }
   else{
-    var block = document.querySelectorAll(".d-block",);
+    var block = document.querySelectorAll(".for-swap");
     block[0].classList.remove('d-block','d-flex');
     block[0].classList.add('d-none');
     block[1].classList.remove('d-block','d-flex');
