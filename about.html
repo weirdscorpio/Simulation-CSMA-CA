@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSMA/CA | About</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Carrier Sense Multiple Access with Collision Avoidance</h1>
+      <div class="custom-border"></div>
+    </header>
+    <main>
+      <div class="about-page container">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  <b>What is CSMA/CA ?</b>
+                  <br />
+                  A brief overview of what carrier sense multiple access with
+                  collision avoidance is.
+                  <br />
+                  <i>Read More</i>
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body custom-scroll">
+                <p>
+                  CSMA is a basic method that controls the communication of
+                  multiple participants on a shared and decentralized
+                  transmission medium. CSMA/CA is mainly used in wireless
+                  networks.
+                </p>
+                <p>
+                  Components of CMSA/CA include:<br /><br />
+
+                  1)Carrier sense (CA): The initial idea is that participants
+                  may only send data over the network if the transmission medium
+                  is free. The carrier status detection checks the channel any
+                  time, and data is not sent until it’s available.<br /><br />
+
+                  2)Multiple access (MA): Several stations share a transmission
+                  medium. It is crucial for functioning communication that all
+                  of them adhere to a binding protocol.<br /><br />
+
+                  3)Collision avoidance (CA): A complex schedule tries to ensure
+                  that two or more participants do not start a transmission at
+                  the same time to avoid collisions. If overlapping does occur,
+                  this will be detected and the transmission will be tried
+                  again.<br /><br />
+                </p>
+                <p>
+                  The most important rule, which you’ll know from communication
+                  situations when there are several participants is only one
+                  person may send their information at once. Else, "collisions"
+                  of data packets is said to occur.<br />
+                  CSMA/CA tries to reduce the frequency of these collisions and
+                  provide a plan at the same time on how to proceed if a
+                  collision does occur.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  <b> How does CMSA/CA Work ? </b>
+                  <br />
+                  Basic functionality of the CMSA/CA protocol
+                  <br />
+                  <i>Read More</i>
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseTwo"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body custom-scroll">
+                <p>
+                  The basic idea behind CSMA/CA is the “Listen Before Talk”
+                  (LBT) principle.
+                </p>
+                <p>
+                  Within CSMA/CA, the distributed coordination function (DCF)
+                  controls the time a station waits before initiating
+                  transmission in a free medium. DCF also assigns certain time
+                  slots to network participants for further actions, creating a
+                  binding time structure. This procedure is the focus of
+                  collision avoidance: a complex time structure that makes it
+                  possible to avoid collisions. DCF takes various intervals into
+                  account when creating the time structure. DCF interframe space
+                  (DIFS): In the first step, participants must monitor the
+                  network for the duration of the DIFS to determine whether it’s
+                  currently free. For CSMA/CA, this means that no other station
+                  within range is sending out a transmission at the same time.
+                  The DIFS results from the SIFS almost double the slot time,
+                  which is between 28 and 50 µs long. Contention window: If
+                  participants determine that the channel is free, they wait a
+                  random amount of time before they start sending. This duration
+                  corresponds to the contention window. This time window doubles
+                  with each collision and corresponds to the binary exponential
+                  backoff (BEB) that is familiar from CSMA/CD. Short interframe
+                  space (SIFS): After sending the data packet, the recipient
+                  node sends a notification – if the RTS/CTS procedure is also
+                  utilized. However, this station also waits for a fixed time
+                  before sending. SIFS is the time it takes to process a data
+                  package. The duration depends on the IEEE-802.11 standard and
+                  is between 10 µs and 16 µs.
+                </p>
+                <p>
+                  The frames “Request to Send” (RTS) and “Clear to Send” (CTS)
+                  are part of the optional extension CSMA/CA RTS/CTS. This
+                  procedure is upstream of the actual data transmission. If a
+                  participant determines that the transmission medium is free,
+                  the device first sends an RTS frame to the participant that is
+                  to receive the data. With this, the output computer makes it
+                  clear that it wants to start a transmission and will occupy
+                  the transmission medium for a certain time.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  <b>Flowchart</b>
+                  <br />
+                  A step by step diagramatical representation of the working of
+                  CMSA/CA
+                  <br />
+                  <i>Read More</i>
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseThree"
+              class="collapse"
+              aria-labelledby="headingThree"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <div class="flowchart">
+                  `<img
+                    src="images/flowchart.png"
+                    alt="Flowchart"
+                    class="img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

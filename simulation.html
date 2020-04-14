@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSMA/CA | Simulation</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Carrier Sense Multiple Access with Collision Avoidance</h1>
+      <div class="custom-border"></div>
+    </header>
+    <main>
+      <div class="simulation-page mt-4 container">
+        <div class="row text-center">
+          <div class="station col-md-2">
+            <img src="images/stations/imac1.png" alt="computer" />
+            <div class="mt-3 holder">
+              <select class="custom-select select-station" id="inputGroupSelect02" onchange="display(1,this.value)">
+                <option selected>Choose Destination</option>
+                <option value="2">Station 2</option>
+                <option value="3">Station 3</option>
+                <option value="4">Station 4</option>
+                <option value="5">Station 5</option>
+                <option value="6">Station 6</option>
+              </select>
+            </div>
+            <div class="stats station1">
+              <div class="rts">
+                RTS : -
+              </div>
+              <div class="cts">
+                CTS : -
+              </div>
+              <div class="sending-data">
+                Data Transfer : -
+              </div>
+            </div>
+          </div>
+          <div class="station col-md-2">
+            <img src="images/stations/imac2.png" alt="computer" />
+            <div class="mt-3 holder">
+              <select class="custom-select select-station" id="inputGroupSelect02" onchange="display(2,this.value)">
+                <option selected>Choose Destination</option>
+                <option value="1">Station 1</option>
+                <option value="3">Station 3</option>
+                <option value="4">Station 4</option>
+                <option value="5">Station 5</option>
+                <option value="6">Station 6</option>
+              </select>
+            </div>
+            <div class="stats station2">
+              <div class="rts">
+                RTS : -
+              </div>
+              <div class="cts">
+                CTS : -
+              </div>
+              <div class="sending-data">
+                Data Transfer : -
+              </div>
+            </div>
+          </div>
+          <div class="station col-md-2">
+            <img src="images/stations/imac3.png" alt="computer" />
+            <div class="mt-3 holder">
+              <select class="custom-select select-station" id="inputGroupSelect02" onchange="display(3,this.value)">
+                <option selected>Choose Destination</option>
+                <option value="1">Station 1</option>
+                <option value="2">Station 2</option>
+                <option value="4">Station 4</option>
+                <option value="5">Station 5</option>
+                <option value="6">Station 6</option>
+              </select>
+            </div>
+            <div class="stats station3">
+              <div class="rts">
+                RTS : -
+              </div>
+              <div class="cts">
+                CTS : -
+              </div>
+              <div class="sending-data">
+                Data Transfer : -
+              </div>
+            </div>
+          </div>
+          <div class="station col-md-2">
+            <img src="images/stations/imac4.png" alt="computer" />
+            <div class="mt-3 holder">
+              <select class="custom-select select-station" id="inputGroupSelect02" onchange="display(4,this.value)">
+                <option selected>Choose Destination</option>
+                <option value="1">Station 1</option>
+                <option value="2">Station 2</option>
+                <option value="3">Station 3</option>
+                <option value="5">Station 5</option>
+                <option value="6">Station 6</option>
+              </select>
+            </div>
+            <div class="stats station4">
+              <div class="rts">
+                RTS : -
+              </div>
+              <div class="cts">
+                CTS : -
+              </div>
+              <div class="sending-data">
+                Data Transfer : -
+              </div>
+            </div>
+          </div>
+          <div class="station col-md-2">
+            <img src="images/stations/imac5.png" alt="computer" />
+            <div class="mt-3 holder">
+              <select class="custom-select select-station" id="inputGroupSelect02" onchange="display(5,this.value)">
+                <option selected>Choose Destination</option>
+                <option value="1">Station 1</option>
+                <option value="2">Station 2</option>
+                <option value="3">Station 3</option>
+                <option value="4">Station 4</option>
+                <option value="6">Station 6</option>
+              </select>
+            </div>
+            <div class="stats station5">
+              <div class="rts">
+                RTS : -
+              </div>
+              <div class="cts">
+                CTS : -
+              </div>
+              <div class="sending-data">
+                Data Transfer : -
+              </div>
+            </div>
+          </div>
+          <div class="station col-md-2">
+            <img src="images/stations/imac6.png" alt="computer" />
+            <div class="mt-3 holder">
+              <select class="custom-select select-station" id="inputGroupSelect02" onchange="display(6,this.value)">
+                <option selected>Choose Destination</option>
+                <option value="1">Station 1</option>
+                <option value="2">Station 2</option>
+                <option value="3">Station 3</option>
+                <option value="4">Station 4</option>
+                <option value="5">Station 5</option>
+              </select>
+            </div>
+            <div class="stats station6">
+              <div class="rts">
+                RTS : -
+              </div>
+              <div class="cts">
+                CTS : -
+              </div>
+              <div class="sending-data">
+                Data Transfer : -
+              </div>
+            </div>
+          </div>
+          <div class="blank col-md-1"></div>
+          <div class="active-stations col-md-2">
+            <div class="transmission d-none">
+              <span class="sender pr-3 d-inline-flex">
+                <img src="images/imac.svg" alt="sender" />
+                <div id="station1"></div>
+              </span>
+              <span class="sending-animation">
+                <img src="images/loading.svg" alt="" />
+              </span>
+              <span class="receiver pl-3 d-inline-flex">
+                <div id="station2"></div>
+                <img src="images/imac.svg" alt="sender" />
+              </span>
+            </div>
+            <div class="no-transmission d-flex"> 
+              No Transmission
+            </div>
+          </div>
+          <div class="router col-md-8">
+            <img src="images/router.svg" alt="router" />
+            <div class="router-stats">
+              <div class="channel" id="channel">
+                Channel : Free
+              </div>
+            </div>
+          </div>
+          <div class="blank col-md-1"></div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="simulation.js"></script>
+  </body>
+</html>
