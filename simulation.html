@@ -163,9 +163,12 @@
                 Data Transfer : -
               </div>
             </div>
-          </div>
-          <div class="blank col-md-1"></div>
-          <div class="active-stations col-md-2">
+          </div>  
+          <div class="col-md-12 send-data">
+            <button onclick="checkChannel()">Send Data</button>
+          </div>        
+<!-- 
+             <div class="active-stations col-md-2">
             <div class="transmission d-none">
               <span class="sender pr-3 d-inline-flex">
                 <img src="images/imac.svg" alt="sender" />
@@ -182,8 +185,15 @@
             <div class="no-transmission d-flex"> 
               No Transmission
             </div>
-          </div>
-          <div class="router col-md-8">
+          </div> -->
+          <div class="row col-md-5 p-0 m-0 data-sender d-none">            
+              <p class="ml-4 mr-4" id="station1">Sender x</p>
+              <img src="images/imac.svg" alt="sender" class="mr-4 mac">                                               
+              <img src="images/loading.svg" alt="sending" class="transmission">            
+              <img src="images/loading.svg" alt="sending" class="transmission">  
+              <img src="images/loading.svg" alt="sending" class="transmission">                
+          </div>          
+          <div class="col-md-2 router">
             <img src="images/router.svg" alt="router" />
             <div class="router-stats">
               <div class="channel" id="channel">
@@ -191,7 +201,13 @@
               </div>
             </div>
           </div>
-          <div class="blank col-md-1"></div>
+          <div class="row col-md-5 p-0 m-0 data-receiver d-none">
+            <img src="images/loading.svg" alt="sending" class="transmission">  
+            <img src="images/loading.svg" alt="sending" class="transmission">  
+            <img src="images/loading.svg" alt="sending" class="transmission">               
+            <img src="images/imac.svg" alt="sender" class="ml-4 mac">                       
+            <p class="ml-4 mr-4" id="station2">Sender y</p>
+          </div>
         </div>
       </div>
     </main>

@@ -10,7 +10,7 @@ var r;
 var clsrts=document.querySelectorAll(".rts");
 var clscts=document.querySelectorAll(".cts");
 var clsdata=document.querySelectorAll(".sending-data");
-
+var swp=0;
 
 /*variables end*/
 
@@ -18,9 +18,11 @@ var clsdata=document.querySelectorAll(".sending-data");
 
 
 function display(a,b){
-  x=a;
-  y=b;
-  checkChannel();
+  if(channel==0)
+  {
+    x=a;
+    y=b;
+  }
 }
 
 function checkChannel(){
@@ -68,8 +70,8 @@ function checkIFS(){
     if(n!=y-1)
       clscts[n].innerHTML="CTS : Received";
   }
-  document.getElementById("station1").innerHTML="S"+x;
-  document.getElementById("station2").innerHTML="S"+y;
+  document.getElementById("station1").innerHTML="Station"+x;
+  document.getElementById("station2").innerHTML="Station"+y;
   clscts[y-1].innerHTML="CTS : Sent"
   clsdata[x-1].innerHTML="Data Transfer : Sending";
   clsdata[y-1].innerHTML="Data Transfer : Receiving";
@@ -80,12 +82,24 @@ function checkIFS(){
 }
 
 function swap(){
-  var none = document.querySelectorAll(".d-none");
-  var block = document.querySelectorAll(".d-flex");
-  none[0].classList.remove('d-none');
-  none[0].classList.add('d-flex');
-  block[0].classList.remove('d-flex');
-  block[0].classList.add('d-none');
+  if(swp==0)
+  {
+    var none = document.querySelectorAll(".d-none");
+    none[0].classList.remove('d-none');
+    none[0].classList.add('d-block','d-flex');
+    none[1].classList.remove('d-none');
+    none[1].classList.add('d-block','d-flex');
+    swp=1;
+  }
+  else{
+    var block = document.querySelectorAll(".d-block",);
+    block[0].classList.remove('d-block','d-flex');
+    block[0].classList.add('d-none');
+    block[1].classList.remove('d-block','d-flex');
+    block[1].classList.add('d-none');
+    
+    swp=0;
+  }
 }
 
 function sendFrame(){  

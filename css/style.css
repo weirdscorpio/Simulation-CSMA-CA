@@ -13,7 +13,7 @@ html {
   left: 0;
   width: 100%;
   max-width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   background-position: center center;
   -webkit-transform: translateZ(0);
@@ -61,6 +61,7 @@ body main .landing-page {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 4.5%;
+  margin-bottom: 10%;
 }
 
 body main .landing-page .card {
@@ -137,10 +138,23 @@ body main .simulation-page {
   overflow-x: hidden;
   background-color: rgba(0, 0, 0, 0.4);
   text-shadow: 1px 0px 1px black;
+  /* .active-stations{
+        border: 1px solid white;
+        border-radius: 2em;
+        height: 4rem;
+        margin-top: 3.5%;
+        padding: 1rem;
+        img {
+          width: 30px;
+        }
+        .transmission{
+          display: flex;
+        }
+      } */
 }
 
 body main .simulation-page .station {
-  height: 25rem;
+  height: 18rem;
 }
 
 body main .simulation-page .station img {
@@ -148,18 +162,34 @@ body main .simulation-page .station img {
   width: 130px;
 }
 
-body main .simulation-page .station .dropdown {
-  margin-top: 1em;
-  text-shadow: 0px 0px 0px black;
-}
-
-body main .simulation-page .station .dropdown .btn {
-  font-size: 10px !important;
+body main .simulation-page .station .holder .select-station {
+  background-color: lightslategray;
+  font-size: 0.5em;
+  color: white;
 }
 
 body main .simulation-page .station .stats {
   text-align: center;
   padding-top: 1em;
+}
+
+body main .simulation-page .send-data {
+  height: 6rem;
+  padding-top: 1.3rem;
+}
+
+body main .simulation-page .send-data button {
+  background: #778899;
+  padding: .5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  color: white;
+}
+
+body main .simulation-page .send-data button:hover {
+  color: black;
 }
 
 body main .simulation-page .router {
@@ -175,18 +205,12 @@ body main .simulation-page .router .router-stats {
   padding-top: 1em;
 }
 
-body main .simulation-page .active-stations,
-body main .simulation-page .active-timer {
-  border: 1px solid white;
-  border-radius: 2em;
-  height: 4rem;
-  margin-top: 3.5%;
-  padding: 1rem;
+body main .simulation-page .data-sender p, body main .simulation-page .data-receiver p {
+  padding-top: 4.5rem;
 }
 
-body main .simulation-page .active-stations img,
-body main .simulation-page .active-timer img {
-  width: 30px;
+body main .simulation-page .data-sender img, body main .simulation-page .data-receiver img {
+  width: 80px;
 }
 
 body main .team-page {
@@ -226,6 +250,7 @@ body main .team-page .download {
   text-decoration: none;
   color: black;
   margin-top: 3rem;
+  height: 3.3rem;
 }
 
 body main .team-page .download:hover {

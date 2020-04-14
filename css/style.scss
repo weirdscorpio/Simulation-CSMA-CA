@@ -14,7 +14,7 @@ html {
   left: 0;
   width: 100%;
   max-width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   background-position: center center;
   -webkit-transform: translateZ(0);
@@ -114,7 +114,7 @@ body {
       background-color: rgba(0, 0, 0, 0.4);
       text-shadow: 1px 0px 1px black;
       .station {
-        height: 25rem;
+        height: 18rem;
         img {
           padding-top: 1em;
           width: 130px;
@@ -131,9 +131,25 @@ body {
           padding-top: 1em;
         }
       }
+      .send-data{
+        height: 6rem;
+        padding-top: 1.3rem;
+        button{
+          background: #778899;
+          padding: .5rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          border: none;
+          border-radius: 2rem;
+          color: white;
+        }
+        button:hover{
+          color: black;
+        }
+      }
       .router {
         margin-bottom: 0.5em;
-        margin-top: 0.5em;
+        margin-top: 0.5em;        
         img {
           width: 110px;
         }
@@ -141,7 +157,15 @@ body {
           padding-top: 1em;
         }
       }
-      .active-stations{
+      .data-sender, .data-receiver{
+        p{
+          padding-top: 4.5rem ;
+        }
+        img{
+          width: 80px;
+        }
+      }
+     /* .active-stations{
         border: 1px solid white;
         border-radius: 2em;
         height: 4rem;
@@ -153,17 +177,7 @@ body {
         .transmission{
           display: flex;
         }
-      }
-      .active-timer{
-        border: 1px solid white;
-        border-radius: 2em;
-        height: 4rem;
-        margin-top: 3.5%;
-        padding: 1rem;
-        img {
-          width: 30px;
-        }
-      }
+      } */
     }
     .team-page {
       display: flex;
@@ -189,6 +203,7 @@ body {
         text-decoration: none;
         color: black;
         margin-top: 3rem;
+        height: 3.3rem;
       }
       .download:hover {
         background: white;
